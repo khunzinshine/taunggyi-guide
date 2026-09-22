@@ -2,16 +2,16 @@ import type { Hotel } from "@/lib/types"
 
 export const hotels: Hotel[] = [
   {
-    slug: "taunggyi-palace",
-    name: { en: "Taunggyi Palace Hotel", my: "တောင်ကြီး ပေလေ့စ် ဟိုတယ်" },
-    address: { en: "12 Bogyoke Aung San Rd (dummy)", my: "ဘိုကြိုက် အောင်စန် လမ်း ၁၂ (နမူနာ)" },
-    phone: "+95 9 4000 1101",
+    slug: "treasure-palace",
+    name: { en: "Treasure Palace Hotel", my: "ရတနာနန်းတော် ဟိုတယ်" },
+    address: { en: "West Circular Road, KyaungGyiSu Quarter, Taunggyi", my: "အနောက်မြို့ပတ်လမ်း၊ ကျောင်းကြီးစုရပ်၊ တောင်ကြီးမြို့။" },
+    phone: "081 2124600",
   },
   {
     slug: "shan-heritage",
     name: { en: "Shan Heritage Hotel", my: "ရှမ်း ဟဲရီတေ့ခ် ဟိုတယ်" },
     address: { en: "8 Market Link Rd (dummy)", my: "ဇေး လမ်း ၈ (နမူနာ)" },
-    phone: "+95 9 4000 1102",
+    phone: "081 2124600",
   },
   {
     slug: "golden-balloon-lodge",

@@ -50,24 +50,26 @@ export function HomeView() {
   return (
     <>
       <CacheHydrator payload={guide} />
-      <section className="hero-sky relative overflow-hidden px-4 pb-8 pt-[max(1.25rem,env(safe-area-inset-top))] text-primary">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <BalloonMark className="size-6 text-primary" />
-            <p className="text-sm font-medium tracking-wide">{copy.appName[locale]}</p>
+      <section className="hero-sky relative overflow-hidden px-4 pb-0 pt-[max(1.25rem,env(safe-area-inset-top))] text-primary">
+        <div className="relative z-10">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <BalloonMark className="size-6 text-primary" />
+              <p className="text-sm font-medium tracking-wide">{copy.appName[locale]}</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge className="bg-primary/15 text-primary">{copy.state[locale]}</Badge>
+              <LanguageSwitch className="bg-white/10 text-primary" />
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <Badge className="bg-primary/15 text-primary">{copy.state[locale]}</Badge>
-            <LanguageSwitch className="bg-white/10 text-primary" />
-          </div>
+          <h1 className="mt-6 max-w-[16ch] font-heading text-[2.15rem] leading-[1.12] tracking-tight text-primary">
+            {city.tagline[locale]}
+          </h1>
+          <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-primary/80">
+            {copy.intro[locale]}
+          </p>
         </div>
-        <h1 className="mt-6 max-w-[16ch] font-heading text-[2.15rem] leading-[1.12] tracking-tight text-primary">
-          {city.tagline[locale]}
-        </h1>
-        <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-primary/80">
-          {copy.intro[locale]}
-        </p>
-        <div className="mt-5 h-36">
+        <div className="pointer-events-none relative -mx-4 mt-6 h-52">
           <FestivalHeroArt />
         </div>
       </section>
