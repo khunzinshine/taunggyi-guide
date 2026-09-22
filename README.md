@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Taunggyi Guide
 
-## Getting Started
+Mobile-first PWA for Taunggyi City: hotels, transport, and Tazaungdaing event notes.
 
-First, run the development server:
+Frontend only. All listings are dummy placeholders so you can drop in your own data later.
+
+## Stack
+
+- Next.js 16 (App Router) + TypeScript
+- Tailwind CSS v4 + shadcn/ui (Nova / Base UI)
+- Service worker PWA (installable, offline after first visit)
+- In-memory server cache on `/api/guide` (swap for Redis later)
+- `localStorage` copy of the guide payload for offline reads
+
+## Run
 
 ```bash
+cd taunggyi-guide
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Offline / install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Service workers are most reliable on a production build:
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then install from the browser (Add to Home Screen). Precached routes: Home, Hotels, Transport, Events, and an offline fallback.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Replace dummy data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit files in `src/data/`:
 
-## Deploy on Vercel
+- `hotels.ts`
+- `transport.ts`
+- `events.ts`
+- `city.ts`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+When you add a backend, keep `src/lib/server-cache.ts` as the cache seam and point it at Redis.
