@@ -1,6 +1,6 @@
 import type { GuidePayload } from "@/lib/types"
 
-const KEY = "taunggyi-guide:v5"
+const KEY = "taunggyi-guide:v6"
 
 export function readGuideCache(): GuidePayload | null {
   if (typeof window === "undefined") return null

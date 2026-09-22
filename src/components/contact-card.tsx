@@ -10,7 +10,7 @@ export type ContactItem = {
   key: string
   name: string
   address: string
-  phone: string
+  phones: string[]
 }
 
 export function ContactList({ items }: { items: ContactItem[] }) {
@@ -32,16 +32,21 @@ export function ContactList({ items }: { items: ContactItem[] }) {
               <span className="sr-only">{copy.contact.address[locale]}: </span>
               {item.address}
             </p>
-            <a
-              href={telHref(item.phone)}
-              className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-primary"
-            >
-              <Phone className="size-3.5" />
-              <span>
-                <span className="sr-only">{copy.contact.phone[locale]}: </span>
-                {item.phone}
-              </span>
-            </a>
+            <div className="mt-1.5 flex flex-col items-start gap-1">
+              {item.phones.map((phone) => (
+                <a
+                  key={phone}
+                  href={telHref(phone)}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary"
+                >
+                  <Phone className="size-3.5" />
+                  <span>
+                    <span className="sr-only">{copy.contact.phone[locale]}: </span>
+                    {phone}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </li>
       ))}

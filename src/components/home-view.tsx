@@ -133,7 +133,7 @@ export function HomeView() {
               key: hotel.slug,
               name: hotel.name[locale],
               address: hotel.address[locale],
-              phone: hotel.phone,
+              phones: hotel.phones,
             }))}
           />
         </section>

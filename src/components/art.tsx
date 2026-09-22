@@ -177,15 +177,12 @@ export function FestivalHeroArt() {
       fill="none"
     >
       <style>{`
-        .fw-a, .fw-b, .fw-c { transform-box: fill-box; transform-origin: center; }
+        .fw-a, .fw-b { transform-box: fill-box; transform-origin: center; }
         .fw-a { animation: fw-bloom 3.2s ease-in-out infinite; }
-        .fw-b { animation: fw-bloom 3.8s ease-in-out infinite 0.9s; }
-        .fw-c { animation: fw-bloom 3.4s ease-in-out infinite 1.6s; }
+        .fw-b { animation: fw-bloom 3.8s ease-in-out infinite 1.1s; }
         .fw-spark { animation: fw-twinkle 1.8s ease-in-out infinite; }
         .b-a { animation: b-float 5.6s ease-in-out infinite; }
         .b-b { animation: b-float 6.4s ease-in-out infinite 0.8s; }
-        .b-c { animation: b-float 5.2s ease-in-out infinite 1.4s; }
-        .b-d { animation: b-float 7s ease-in-out infinite 0.4s; }
         @keyframes fw-bloom {
           0%, 100% { opacity: 0.42; transform: scale(0.88); }
           46%, 58% { opacity: 1; transform: scale(1); }
@@ -199,7 +196,7 @@ export function FestivalHeroArt() {
           50% { transform: translateY(-3px); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .fw-a, .fw-b, .fw-c, .fw-spark, .b-a, .b-b, .b-c, .b-d {
+          .fw-a, .fw-b, .fw-spark, .b-a, .b-b {
             animation: none;
             opacity: 0.9;
             transform: none;
@@ -213,76 +210,47 @@ export function FestivalHeroArt() {
           <stop offset="100%" stopColor="oklch(0.72 0.1 80)" />
         </radialGradient>
       </defs>
+      <circle cx="220" cy="30" r="16" fill="oklch(0.82 0.12 85 / 0.16)" />
+      <circle cx="220" cy="30" r="10" fill="url(#hero-moon)" />
       <FireworkBurst
         className="fw-a"
-        cx={46}
-        cy={38}
-        size={26}
+        cx={148}
+        cy={34}
+        size={20}
         rays={12}
         color="oklch(0.86 0.12 85)"
         accent="oklch(0.96 0.04 95)"
       />
       <FireworkBurst
         className="fw-b"
-        cx={214}
-        cy={28}
-        size={16}
-        rays={10}
-        color="oklch(0.9 0.08 92)"
-        accent="oklch(0.97 0.03 95)"
-      />
-      <FireworkBurst
-        className="fw-c"
-        cx={400}
-        cy={42}
+        cx={292}
+        cy={34}
         size={20}
         rays={12}
-        color="oklch(0.78 0.13 60)"
-        accent="oklch(0.93 0.07 80)"
+        color="oklch(0.8 0.12 68)"
+        accent="oklch(0.94 0.06 85)"
       />
       <g className="fw-spark" fill="oklch(0.93 0.08 90)">
-        <circle cx="80" cy="22" r="1.1" />
-        <circle cx="122" cy="48" r="0.8" />
-        <circle cx="176" cy="16" r="1" />
-        <circle cx="258" cy="36" r="0.7" />
-        <circle cx="348" cy="20" r="0.9" />
-        <circle cx="426" cy="24" r="0.8" />
+        <circle cx="176" cy="16" r="0.9" />
+        <circle cx="220" cy="48" r="0.7" />
+        <circle cx="264" cy="16" r="0.9" />
       </g>
-      <circle cx="328" cy="34" r="18" fill="oklch(0.82 0.12 85 / 0.16)" />
-      <circle cx="328" cy="34" r="11" fill="url(#hero-moon)" />
       <SkyBalloon
         className="b-a"
-        x={98}
-        y={86}
-        scale={0.92}
-        tilt={-4}
-        body="oklch(0.8 0.12 78)"
-      />
-      <SkyBalloon
-        className="b-b"
-        x={200}
-        y={72}
-        scale={1.16}
-        tilt={2}
+        x={164}
+        y={96}
+        scale={1}
+        tilt={-3}
         body="oklch(0.9 0.07 90)"
         stripe="oklch(0.72 0.14 72)"
       />
       <SkyBalloon
-        className="b-c"
-        x={288}
+        className="b-b"
+        x={276}
         y={96}
-        scale={0.78}
-        tilt={5}
-        body="oklch(0.74 0.12 68)"
-      />
-      <SkyBalloon
-        className="b-d"
-        x={366}
-        y={108}
-        scale={0.54}
-        tilt={-3}
-        body="oklch(0.84 0.1 88)"
-        stripe="oklch(0.68 0.12 70)"
+        scale={1}
+        tilt={3}
+        body="oklch(0.8 0.12 78)"
       />
       <path
         d="M-12 158C28 128 72 124 116 148C154 120 200 116 246 144C284 122 328 126 372 150C402 134 430 140 456 156V204H-12Z"

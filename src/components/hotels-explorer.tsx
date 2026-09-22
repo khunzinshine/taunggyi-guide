@@ -22,7 +22,7 @@ export function HotelsExplorer({ hotels }: { hotels: Hotel[] }) {
         hotel.name.my,
         hotel.address.en,
         hotel.address.my,
-        hotel.phone,
+        ...hotel.phones,
       ]
         .join(" ")
         .toLowerCase()
@@ -51,7 +51,7 @@ export function HotelsExplorer({ hotels }: { hotels: Hotel[] }) {
             key: hotel.slug,
             name: hotel.name[locale],
             address: hotel.address[locale],
-            phone: hotel.phone,
+            phones: hotel.phones,
           }))}
         />
       )}

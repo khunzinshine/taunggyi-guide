@@ -4,14 +4,14 @@ export type Hotel = {
   slug: string
   name: Text
   address: Text
-  phone: string
+  phones: string[]
 }
 
 export type Transport = {
   slug: string
   name: Text
   address: Text
-  phone: string
+  phones: string[]
 }
 
 export type BalloonKind = "day" | "fire"

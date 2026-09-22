@@ -22,7 +22,7 @@ export function TransportExplorer({ items }: { items: Transport[] }) {
         item.name.my,
         item.address.en,
         item.address.my,
-        item.phone,
+        ...item.phones,
       ]
         .join(" ")
         .toLowerCase()
@@ -51,7 +51,7 @@ export function TransportExplorer({ items }: { items: Transport[] }) {
             key: item.slug,
             name: item.name[locale],
             address: item.address[locale],
-            phone: item.phone,
+            phones: item.phones,
           }))}
         />
       )}
