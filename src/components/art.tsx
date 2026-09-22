@@ -170,33 +170,36 @@ function SkyBalloon({
 export function FestivalHeroArt() {
   return (
     <svg
-      viewBox="0 0 440 200"
-      preserveAspectRatio="xMidYMid slice"
+      viewBox="0 0 400 300"
+      preserveAspectRatio="xMidYMax slice"
       className="h-full w-full"
       aria-hidden="true"
       fill="none"
     >
       <style>{`
-        .fw-a, .fw-b { transform-box: fill-box; transform-origin: center; }
-        .fw-a { animation: fw-bloom 3.2s ease-in-out infinite; }
-        .fw-b { animation: fw-bloom 3.8s ease-in-out infinite 1.1s; }
-        .fw-spark { animation: fw-twinkle 1.8s ease-in-out infinite; }
-        .b-a { animation: b-float 5.6s ease-in-out infinite; }
-        .b-b { animation: b-float 6.4s ease-in-out infinite 0.8s; }
+        .fw-a, .fw-b, .fw-c { transform-box: fill-box; transform-origin: center; }
+        .fw-a { animation: fw-bloom 3.4s ease-in-out infinite; }
+        .fw-b { animation: fw-bloom 4.2s ease-in-out infinite 1.4s; }
+        .fw-c { animation: fw-bloom 3s ease-in-out infinite 0.6s; }
+        .fw-spark { animation: fw-twinkle 2.4s ease-in-out infinite; }
+        .fw-spark-b { animation: fw-twinkle 3.1s ease-in-out infinite 0.9s; }
+        .b-a { animation: b-float 6.2s ease-in-out infinite; }
+        .b-b { animation: b-float 7.4s ease-in-out infinite 1.2s; }
+        .b-c { animation: b-float 5.5s ease-in-out infinite 0.5s; }
         @keyframes fw-bloom {
-          0%, 100% { opacity: 0.42; transform: scale(0.88); }
-          46%, 58% { opacity: 1; transform: scale(1); }
+          0%, 100% { opacity: 0.28; transform: scale(0.82); }
+          44%, 56% { opacity: 1; transform: scale(1); }
         }
         @keyframes fw-twinkle {
-          0%, 100% { opacity: 0.18; }
-          50% { opacity: 0.95; }
+          0%, 100% { opacity: 0.12; }
+          50% { opacity: 0.9; }
         }
         @keyframes b-float {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-3px); }
+          50% { transform: translateY(-7px); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .fw-a, .fw-b, .fw-spark, .b-a, .b-b {
+          .fw-a, .fw-b, .fw-c, .fw-spark, .fw-spark-b, .b-a, .b-b, .b-c {
             animation: none;
             opacity: 0.9;
             transform: none;
@@ -205,66 +208,100 @@ export function FestivalHeroArt() {
       `}</style>
       <defs>
         <radialGradient id="hero-moon" cx="38%" cy="34%" r="65%">
-          <stop offset="0%" stopColor="oklch(0.96 0.04 95)" />
-          <stop offset="70%" stopColor="oklch(0.84 0.12 85)" />
-          <stop offset="100%" stopColor="oklch(0.72 0.1 80)" />
+          <stop offset="0%" stopColor="oklch(0.97 0.04 95)" />
+          <stop offset="55%" stopColor="oklch(0.86 0.12 85)" />
+          <stop offset="100%" stopColor="oklch(0.7 0.1 70)" />
         </radialGradient>
+        <filter id="hero-glow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="2.4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
       </defs>
-      <circle cx="220" cy="30" r="16" fill="oklch(0.82 0.12 85 / 0.16)" />
-      <circle cx="220" cy="30" r="10" fill="url(#hero-moon)" />
+      <g className="fw-spark" fill="oklch(0.95 0.06 90)">
+        <circle cx="28" cy="36" r="0.7" />
+        <circle cx="96" cy="22" r="0.5" />
+        <circle cx="188" cy="48" r="0.6" />
+        <circle cx="268" cy="18" r="0.8" />
+        <circle cx="348" cy="88" r="0.5" />
+        <circle cx="52" cy="128" r="0.45" />
+      </g>
+      <g className="fw-spark-b" fill="oklch(0.92 0.08 70)">
+        <circle cx="74" cy="58" r="0.5" />
+        <circle cx="156" cy="90" r="0.4" />
+        <circle cx="312" cy="46" r="0.55" />
+        <circle cx="378" cy="132" r="0.45" />
+      </g>
+      <circle cx="358" cy="86" r="20" fill="oklch(0.82 0.12 85 / 0.14)" />
+      <circle cx="358" cy="86" r="9" fill="url(#hero-moon)" filter="url(#hero-glow)" />
       <FireworkBurst
         className="fw-a"
-        cx={148}
-        cy={34}
-        size={20}
-        rays={12}
-        color="oklch(0.86 0.12 85)"
+        cx={298}
+        cy={102}
+        size={13}
+        rays={10}
+        color="oklch(0.88 0.11 85)"
         accent="oklch(0.96 0.04 95)"
       />
       <FireworkBurst
-        className="fw-b"
-        cx={292}
-        cy={34}
-        size={20}
-        rays={12}
-        color="oklch(0.8 0.12 68)"
-        accent="oklch(0.94 0.06 85)"
+        className="fw-c"
+        cx={378}
+        cy={148}
+        size={8}
+        rays={8}
+        color="oklch(0.84 0.1 55)"
+        accent="oklch(0.94 0.06 80)"
       />
-      <g className="fw-spark" fill="oklch(0.93 0.08 90)">
-        <circle cx="176" cy="16" r="0.9" />
-        <circle cx="220" cy="48" r="0.7" />
-        <circle cx="264" cy="16" r="0.9" />
-      </g>
+      <FireworkBurst
+        className="fw-b"
+        cx={36}
+        cy={232}
+        size={16}
+        rays={12}
+        color="oklch(0.78 0.13 48)"
+        accent="oklch(0.93 0.08 75)"
+      />
       <SkyBalloon
-        className="b-a"
-        x={164}
-        y={96}
-        scale={1}
-        tilt={-3}
-        body="oklch(0.9 0.07 90)"
-        stripe="oklch(0.72 0.14 72)"
+        className="b-c"
+        x={352}
+        y={150}
+        scale={0.38}
+        tilt={-14}
+        body="oklch(0.86 0.08 95)"
       />
       <SkyBalloon
         className="b-b"
-        x={276}
-        y={96}
-        scale={1}
-        tilt={3}
-        body="oklch(0.8 0.12 78)"
+        x={278}
+        y={204}
+        scale={0.56}
+        tilt={5}
+        body="oklch(0.8 0.12 72)"
+        stripe="oklch(0.62 0.14 45)"
       />
       <path
-        d="M-12 158C28 128 72 124 116 148C154 120 200 116 246 144C284 122 328 126 372 150C402 134 430 140 456 156V204H-12Z"
-        fill="oklch(0.18 0.02 80 / 0.9)"
+        d="M-16 236C36 214 78 210 124 228C168 208 214 204 258 226C300 210 344 214 392 232C420 220 444 226 464 238V304H-16Z"
+        fill="oklch(0.16 0.03 70 / 0.92)"
+      />
+      <SkyBalloon
+        className="b-a"
+        x={196}
+        y={226}
+        scale={0.82}
+        tilt={-6}
+        body="oklch(0.9 0.07 90)"
+        stripe="oklch(0.72 0.14 72)"
       />
       <path
-        d="M-12 176C42 160 96 156 154 172C204 154 258 156 314 174C360 162 408 166 456 180V204H-12Z"
-        fill="oklch(0.1 0.01 80)"
+        d="M-16 252C40 238 92 236 148 250C204 236 258 238 312 252C360 242 408 246 464 258V304H-16Z"
+        fill="oklch(0.09 0.02 70)"
       />
-      <g fill="oklch(0.84 0.11 85 / 0.8)">
-        <circle cx="36" cy="162" r="2.2" />
-        <circle cx="54" cy="172" r="1.5" />
-        <circle cx="398" cy="164" r="1.8" />
-        <circle cx="416" cy="176" r="1.3" />
+      <g fill="oklch(0.86 0.1 80 / 0.85)">
+        <circle cx="32" cy="246" r="1.6" />
+        <circle cx="48" cy="256" r="1.1" />
+        <circle cx="360" cy="248" r="1.4" />
+        <circle cx="382" cy="258" r="1" />
       </g>
     </svg>
   )

@@ -13,7 +13,7 @@ import { city } from "@/data/city"
 import { copy } from "@/data/copy"
 import { useLocale } from "@/components/locale-provider"
 import { getGuidePayload } from "@/lib/guide"
-import { formatDateRange } from "@/lib/utils"
+import { cn, formatDateRange } from "@/lib/utils"
 
 export function HomeView() {
   const { locale } = useLocale()
@@ -51,6 +51,9 @@ export function HomeView() {
     <>
       <CacheHydrator payload={guide} />
       <section className="hero-sky relative overflow-hidden px-4 pb-0 pt-[max(1.25rem,env(safe-area-inset-top))] text-primary">
+        <div className="pointer-events-none absolute inset-0">
+          <FestivalHeroArt />
+        </div>
         <div className="relative z-10">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2">
@@ -62,16 +65,28 @@ export function HomeView() {
               <LanguageSwitch className="bg-white/10 text-primary" />
             </div>
           </div>
-          <h1 className="mt-6 max-w-[16ch] font-heading text-[2.15rem] leading-[1.12] tracking-tight text-primary">
+          <h1
+            className={cn(
+              "mt-4 font-heading text-primary",
+              locale === "my"
+                ? "max-w-[11em] text-[1.45rem] leading-[1.45]"
+                : "max-w-[16ch] text-[1.85rem] leading-[1.12] tracking-tight"
+            )}
+          >
             {city.tagline[locale]}
           </h1>
-          <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-primary/80">
+          <p
+            className={cn(
+              "mt-2 text-primary/80",
+              locale === "my"
+                ? "max-w-[18em] text-[0.8125rem] leading-relaxed"
+                : "max-w-[26ch] text-sm leading-snug"
+            )}
+          >
             {copy.intro[locale]}
           </p>
         </div>
-        <div className="pointer-events-none relative -mx-4 mt-6 h-52">
-          <FestivalHeroArt />
-        </div>
+        <div className="relative h-40" aria-hidden="true" />
       </section>
 
       <div className="space-y-6 px-4 py-5">

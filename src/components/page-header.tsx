@@ -32,11 +32,25 @@ export function PageHeader({
           </Link>
         ) : null}
         <div className={cn("min-w-0 flex-1", !backHref && "pt-0.5")}>
-          <h1 className="font-heading text-2xl leading-tight tracking-tight">
+          <h1
+            className={cn(
+              "font-heading",
+              locale === "my"
+                ? "text-xl leading-snug"
+                : "text-2xl leading-tight tracking-tight"
+            )}
+          >
             {title}
           </h1>
           {subtitle ? (
-            <p className="mt-0.5 text-sm text-muted-foreground">{subtitle}</p>
+            <p
+              className={cn(
+                "mt-0.5 text-muted-foreground",
+                locale === "my" ? "text-[0.8125rem] leading-relaxed" : "text-sm"
+              )}
+            >
+              {subtitle}
+            </p>
           ) : null}
         </div>
         <LanguageSwitch className="mt-0.5 shrink-0" />
