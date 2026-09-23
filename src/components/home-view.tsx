@@ -19,7 +19,7 @@ export function HomeView() {
   const { locale } = useLocale()
   const guide = getGuidePayload()
   const featuredEvent = guide.events[0]
-  const featuredHotels = guide.hotels.slice(0, 2)
+  const featuredHotels = guide.hotels.slice(0, 5)
   const shortcuts = [
     {
       href: "/hotels",
