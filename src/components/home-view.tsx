@@ -128,7 +128,7 @@ export function HomeView() {
 
         <section>
           <div className="mb-3 flex items-end justify-between gap-3">
-            <h2 className="font-heading text-xl">{copy.thisWeek[locale]}</h2>
+            <h2 className="font-heading text-xl" />
             <Link href="/events" className="text-sm text-primary">
               {copy.allEvents[locale]}
             </Link>
