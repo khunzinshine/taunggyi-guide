@@ -70,7 +70,7 @@ export function HomeView() {
               "mt-4 font-heading text-primary",
               locale === "my"
                 ? "max-w-[11em] text-[1.45rem] leading-[1.45]"
-                : "max-w-[16ch] text-[1.85rem] leading-[1.12] tracking-tight"
+                : "max-w-[16ch] text-[1.65rem] leading-[1.2] tracking-tight"
             )}
           >
             {city.tagline[locale]}

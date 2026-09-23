@@ -224,21 +224,21 @@ export function FestivalHeroArt() {
         <circle cx="28" cy="36" r="0.7" />
         <circle cx="96" cy="22" r="0.5" />
         <circle cx="188" cy="48" r="0.6" />
-        <circle cx="268" cy="18" r="0.8" />
-        <circle cx="348" cy="88" r="0.5" />
+        <circle cx="248" cy="18" r="0.8" />
+        <circle cx="316" cy="88" r="0.5" />
         <circle cx="52" cy="128" r="0.45" />
       </g>
       <g className="fw-spark-b" fill="oklch(0.92 0.08 70)">
         <circle cx="74" cy="58" r="0.5" />
         <circle cx="156" cy="90" r="0.4" />
-        <circle cx="312" cy="46" r="0.55" />
-        <circle cx="378" cy="132" r="0.45" />
+        <circle cx="280" cy="46" r="0.55" />
+        <circle cx="338" cy="128" r="0.45" />
       </g>
-      <circle cx="358" cy="86" r="20" fill="oklch(0.82 0.12 85 / 0.14)" />
-      <circle cx="358" cy="86" r="9" fill="url(#hero-moon)" filter="url(#hero-glow)" />
+      <circle cx="322" cy="86" r="20" fill="oklch(0.82 0.12 85 / 0.14)" />
+      <circle cx="322" cy="86" r="9" fill="url(#hero-moon)" filter="url(#hero-glow)" />
       <FireworkBurst
         className="fw-a"
-        cx={298}
+        cx={264}
         cy={102}
         size={13}
         rays={10}
@@ -247,7 +247,7 @@ export function FestivalHeroArt() {
       />
       <FireworkBurst
         className="fw-c"
-        cx={378}
+        cx={342}
         cy={148}
         size={8}
         rays={8}
@@ -265,7 +265,7 @@ export function FestivalHeroArt() {
       />
       <SkyBalloon
         className="b-c"
-        x={352}
+        x={316}
         y={150}
         scale={0.38}
         tilt={-14}
@@ -273,7 +273,7 @@ export function FestivalHeroArt() {
       />
       <SkyBalloon
         className="b-b"
-        x={278}
+        x={246}
         y={204}
         scale={0.56}
         tilt={5}
@@ -286,7 +286,7 @@ export function FestivalHeroArt() {
       />
       <SkyBalloon
         className="b-a"
-        x={196}
+        x={176}
         y={226}
         scale={0.82}
         tilt={-6}
@@ -300,8 +300,8 @@ export function FestivalHeroArt() {
       <g fill="oklch(0.86 0.1 80 / 0.85)">
         <circle cx="32" cy="246" r="1.6" />
         <circle cx="48" cy="256" r="1.1" />
-        <circle cx="360" cy="248" r="1.4" />
-        <circle cx="382" cy="258" r="1" />
+        <circle cx="328" cy="248" r="1.4" />
+        <circle cx="348" cy="258" r="1" />
       </g>
     </svg>
   )
